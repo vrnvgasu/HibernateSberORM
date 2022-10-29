@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
+<hibernate-configuration>
+  <session-factory>
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="connection.driver_class">org.postgresql.Driver </property>
+    <property name="connection.url">jdbc:postgresql://localhost:5491/sber_hibernate_orm</property>
+    <property name="connection.username">user</property>
+    <property name="connection.password">user</property>
+
+    <!--Будем смотреть логи SQL-->
+    <property name="show_sql">true</property>
+
+    <!--Маппим класс UserEntity с таблицей user -->
+    <!--User.hbm.xml - название файла произвольное-->
+    <mapping resource="User.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
