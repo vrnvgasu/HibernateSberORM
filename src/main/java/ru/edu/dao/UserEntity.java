@@ -1,16 +1,31 @@
 package ru.edu.dao;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 /**
  * User POJO entity
  */
+@Entity
+//Пришлось писать name="\"user\"", а не name="user",
+// тк user - служебная переменная в postgresql
+// и нужно было получить такой sql запрос: from "user"
+@Table(name = "\"user\"")
 public class UserEntity {
 
+	@Id
+	@Column(name = "id")
 	private String id;
 
+	@Column(name = "first_name")
 	private String firstName;
 
+	@Column(name = "last_name")
 	private String lastName;
 
+	@Column(name = "birth_date")
 	private String birthDate;
 
 	public UserEntity() {}

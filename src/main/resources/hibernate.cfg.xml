@@ -14,8 +14,6 @@
     <!--Будем смотреть логи SQL-->
     <property name="show_sql">true</property>
 
-    <!--Маппим класс UserEntity с таблицей user -->
-    <!--User.hbm.xml - название файла произвольное-->
-    <mapping resource="User.hbm.xml"/>
+    <mapping class="ru.edu.dao.UserEntity"/>
   </session-factory>
 </hibernate-configuration>
