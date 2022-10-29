@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  spring_mvc-db:
+    image: postgres
+    container_name: sber_hibernate_orm-db
+    environment:
+      - POSTGRES_PASSWORD=user
+      - POSTGRES_USER=user
+      - POSTGRES_DB=sber_hibernate_orm
+    ports:
+      - "5491:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
